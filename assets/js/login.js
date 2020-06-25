@@ -45,6 +45,8 @@ $(function() {
             // 快速获取表单中的数据
             data: $(this).serialize(),
             success: function(res) {
+                console.log(res);
+
                 if (res.status !== 0) {
                     return layer.msg('登录失败！')
                 }
@@ -52,8 +54,8 @@ $(function() {
                 localStorage.setItem('token', res.token)
 
                 // 保存token字符串，到localstorage
-                location.href = '../index.html'
-                console.log($(this).serialize());
+                location.href = '/index.html'
+                    // console.log($(this).serialize());
 
             }
         })
